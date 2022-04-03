@@ -1,4 +1,14 @@
+from jobs import read
+
+
+
 def get_unique_job_types(path):
+    lista_jobs = read(path)
+    lista_tipos_unicos = []
+    # conjunto_de_unicos = set()
+    for job in lista_jobs:
+        if job["job_type"] not in lista_tipos_unicos:
+            lista_tipos_unicos.append(job["job_type"])
     """Checks all different job types and returns a list of them
 
     Must call `read`
@@ -13,7 +23,8 @@ def get_unique_job_types(path):
     list
         List of unique job types
     """
-    return []
+
+    return lista_tipos_unicos
 
 
 def filter_by_job_type(jobs, job_type):
