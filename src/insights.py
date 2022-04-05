@@ -20,7 +20,7 @@ def get_unique_job_types(path):
     Returns
     -------
     list
-        List of unique job types
+        List of unique job typess
     """
 
     return lista_tipos_unicos
