@@ -20,27 +20,21 @@ def filter_by_job_type(lista_jobs, job_type):
     return filter_jobs
 
 
-def get_unique_industries(path):
-    # ffff
-    return []
+def get_unique_industries(path):       
+    conjunto_de_unicos = set()
+    list_industria = read(path)
+    for industria in list_industria:
+        if len(industria["industry"]) != 0:
+            conjunto_de_unicos.add(industria["industry"])
+    return conjunto_de_unicos
 
 
 def filter_by_industry(jobs, industry):
-    """Filters a list of jobs by industry
-
-    Parameters
-    ----------
-    jobs : list
-        List of jobs to be filtered
-    industry : str
-        Industry for the list filter
-
-    Returns
-    -------
-    list
-        List of jobs with provided industry
-    """
-    return []
+    filter_industry = []
+    for industria in jobs:
+        if industria["industry"] == industry:
+            filter_industry.append(industria)
+    return filter_industry
 
 
 def get_max_salary(path):
