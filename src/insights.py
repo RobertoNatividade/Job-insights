@@ -1,20 +1,23 @@
-from jobs import read
+from src.jobs import read
 
 
 def get_unique_job_types(path):
     lista_jobs = read(path)
-    lista_tipos_unicos = []
-    # conjunto_de_unicos = set()
-    for job in lista_jobs:
-        if job["job_type"] not in lista_tipos_unicos:
-            lista_tipos_unicos.append(job["job_type"])
+    # lista_tipos_unicos = []
+    conjunto_de_unicos = set()
+    for jobs in lista_jobs:
+        conjunto_de_unicos.add(jobs["job_type"])
 
-    return lista_tipos_unicos
+    return conjunto_de_unicos
 
 
 def filter_by_job_type(jobs, job_type):
     # fff
-    return []
+    filter_jobs = []
+    for job in jobs:
+        if job["job_type"] == job_type:
+            filter_jobs.append(job)
+    return filter_jobs
 
 
 def get_unique_industries(path):
