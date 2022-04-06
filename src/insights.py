@@ -8,68 +8,18 @@ def get_unique_job_types(path):
     for job in lista_jobs:
         if job["job_type"] not in lista_tipos_unicos:
             lista_tipos_unicos.append(job["job_type"])
-    """Checks all different job types and returns a list of them
-
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    list
-        List of unique job typess
-    """
 
     return lista_tipos_unicos
 
 
 def filter_by_job_type(jobs, job_type):
-    lista_jobs_tipo = []
-    for job in jobs:
-        if job["job_type"] == job_type:
-            lista_jobs_tipo.append(job)
-    """Filters a list of jobs by job_type
-
-    Parameters
-    ----------
-    jobs : list
-        List of jobs to be filtered
-    job_type : str
-        Job type for the list filter
-
-    Returns
-    -------
-    list
-        List of jobs with provided job_type
-    """
-    return lista_jobs_tipo
+    # fff
+    return []
 
 
 def get_unique_industries(path):
-    lista_industrias = read(path)
-    lista_tipos = []
-    for industria in lista_industrias:
-        if industria["industry"] != "":
-            if industria["industry"] not in industria:
-                lista_tipos.append(industria["industry"])
-    """Checks all different industries and returns a list of them
-
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    list
-        List of unique industries
-    """
-    return lista_tipos
+    # ffff
+    return []
 
 
 def filter_by_industry(jobs, industry):
