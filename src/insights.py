@@ -11,10 +11,10 @@ def get_unique_job_types(path):
     return conjunto_de_unicos
 
 
-def filter_by_job_type(jobs, job_type):
+def filter_by_job_type(lista_jobs, job_type):
     # fff
     filter_jobs = []
-    for job in jobs:
+    for job in lista_jobs:
         if job["job_type"] == job_type:
             filter_jobs.append(job)
     return filter_jobs
