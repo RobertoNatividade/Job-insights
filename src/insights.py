@@ -20,7 +20,7 @@ def filter_by_job_type(lista_jobs, job_type):
     return filter_jobs
 
 
-def get_unique_industries(path):       
+def get_unique_industries(path):
     conjunto_de_unicos = set()
     list_industria = read(path)
     for industria in list_industria:
@@ -38,6 +38,13 @@ def filter_by_industry(jobs, industry):
 
 
 def get_max_salary(path):
+    lista_jobs = read(path)
+    lista_de_salarios = []
+    for salario in lista_jobs:
+        if salario["max_salary"].isnumeric():
+            lista_de_salarios.append(int(salario['max_salary']))
+    return max(lista_de_salarios)
+
     """Get the maximum salary of all jobs
 
     Must call `read`
@@ -56,6 +63,12 @@ def get_max_salary(path):
 
 
 def get_min_salary(path):
+    lista_jobs = read(path)
+    lista_de_salarios = []
+    for salario in lista_jobs:
+        if salario["min_salary"].isnumeric():
+            lista_de_salarios.append(int(salario['min_salary']))
+    return min(lista_de_salarios)
     """Get the minimum salary of all jobs
 
     Must call `read`
@@ -69,6 +82,9 @@ def get_min_salary(path):
     -------
     int
         The minimum salary paid out of all job opportunities
+
+        https://www.programiz.com/python-programming/methods/string/isnumeric
+         checando se é numero ou vazio
     """
     pass
 
